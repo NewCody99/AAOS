@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infotainment Apps</title>
+
+  <!-- Font Awesome CDN for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* Reset & Base Layout */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    body {
+      background-color: #08090C;
+      color: #F3F4F6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 32px;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: 700;
+      color: #F3F4F6;
+      letter-spacing: -0.5px;
+    }
+
+    p.subtitle {
+      color: #9CA3AF;
+      margin-top: 12px;
+      margin-bottom: 48px;
+      font-size: 24px;
+      font-weight: 400;
+    }
+
+    /* 2 Large Square App Cards Grid (YouTube & Spotify - 360px x 360px matching demo) */
+    .icon-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 56px;
+      flex-wrap: wrap;
+    }
+
+    /* Square Card button styles matching Android 360dp x 360dp specifications */
+    .icon-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 360px;
+      height: 360px;
+      border-radius: 36px;
+      padding: 32px;
+      text-decoration: none;
+      color: #F3F4F6;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .icon-card i, .icon-card svg {
+      width: 144px;
+      height: 144px;
+      font-size: 144px;
+      margin-bottom: 24px;
+      transition: transform 0.25s ease, fill 0.25s ease, color 0.25s ease;
+    }
+
+    .card-title {
+      font-size: 36px;
+      font-weight: 700;
+      color: #F3F4F6;
+      line-height: 1.2;
+    }
+
+    .card-desc {
+      font-size: 20px;
+      font-weight: 400;
+      color: #9CA3AF;
+      margin-top: 8px;
+      line-height: 1.3;
+      text-align: center;
+    }
+
+    /* Brand Styling: YouTube (360px tile with linear gradient 315deg) */
+    .icon-card.youtube {
+      background: linear-gradient(135deg, #2C0A0D 0%, #140506 100%);
+      border: 2px solid #FF0000;
+    }
+    .icon-card.youtube i, .icon-card.youtube svg {
+      color: #FF0000;
+      fill: #FF0000;
+    }
+    .icon-card.youtube:hover, .icon-card.youtube:active {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 20px 48px rgba(255, 0, 0, 0.45);
+      border-color: #FF3333;
+    }
+
+    /* Brand Styling: Spotify (360px tile with linear gradient 315deg) */
+    .icon-card.spotify {
+      background: linear-gradient(135deg, #0A2A17 0%, #04120A 100%);
+      border: 2px solid #1DB954;
+    }
+    .icon-card.spotify i, .icon-card.spotify svg {
+      color: #1DB954;
+      fill: #1DB954;
+    }
+    .icon-card.spotify:hover, .icon-card.spotify:active {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 20px 48px rgba(29, 185, 84, 0.45);
+      border-color: #22D863;
+    }
+
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 800px) {
+      h1 {
+        font-size: 32px;
+      }
+      p.subtitle {
+        font-size: 18px;
+        margin-bottom: 32px;
+      }
+      .icon-card {
+        width: 260px;
+        height: 260px;
+        padding: 24px;
+        border-radius: 28px;
+      }
+      .icon-card i, .icon-card svg {
+        width: 96px;
+        height: 96px;
+        font-size: 96px;
+        margin-bottom: 16px;
+      }
+      .card-title {
+        font-size: 26px;
+      }
+      .card-desc {
+        font-size: 15px;
+      }
+      .icon-wrapper {
+        gap: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Infotainment Apps</h1>
+    <p class="subtitle">Select an application to launch</p>
+
+    <div class="icon-wrapper">
+      <!-- YouTube Tile (360dp x 360dp, 144dp Icon) -->
+      <a href="https://www.youtube.com" class="icon-card youtube">
+        <svg viewBox="0 0 576 512" aria-hidden="true" focusable="false">
+          <path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.206-142.739 81.200z"/>
+        </svg>
+        <span class="card-title">YouTube</span>
+        <span class="card-desc">Stream Videos &amp; Shows</span>
+      </a>
+
+      <!-- Spotify Tile (360dp x 360dp, 144dp Icon) -->
+      <a href="https://open.spotify.com" class="icon-card spotify">
+        <svg viewBox="0 0 496 512" aria-hidden="true" focusable="false">
+          <path d="M248 8C111.1 8 0 119.1 0 256s111.1 248 248 248 248-111.1 248-248S384.9 8 248 8zm100.7 364.9c-4.2 0-6.8-1.3-10.7-3.6-32.4-19.8-73.6-24.3-122-13.2-9.4 2.2-18.4-3.6-20.5-13-2.2-9.4 3.6-18.4 13-20.5 53.6-12.2 99.3-7.1 136.2 15.5 8 4.9 10.6 15.5 5.7 23.5-3.1 4.5-8.2 6.3-11.7 6.3zm25.9-58.4c-5.3 0-8.8-1.8-13.2-4.4-37.1-22.8-93.7-29.5-137.6-16.2-11.7 3.5-24.1-3.2-27.6-14.9-3.5-11.7 3.2-24.1 14.9-27.6 50.8-15.3 113.1-7.8 156.4 18.8 10.2 6.2 13.4 19.5 7.2 29.7-4.1 6.5-11.6 9.6-20.1 9.6zm3.8-62.8c-44.4-26.4-117.8-28.8-160.1-15.9-13.9 4.2-28.5-3.7-32.7-17.7-4.2-13.9 3.7-28.5 17.7-32.7 48.5-14.7 129.5-11.9 180.7 18.5 12.5 7.4 16.6 23.6 9.2 36.1-5.2 8.7-14.7 11.7-24.8 11.7z"/>
+        </svg>
+        <span class="card-title">Spotify</span>
+        <span class="card-desc">Listen to Music &amp; Podcasts</span>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>

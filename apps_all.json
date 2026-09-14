@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "apps": [
+    {
+      "id": "youtube",
+      "url": "https://www.youtube.com"
+    },
+    {
+      "id": "spotify",
+      "url": "https://open.spotify.com"
+    }
+  ]
+}

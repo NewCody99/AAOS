@@ -1,0 +1,9 @@
+{
+  "version": "1.0",
+  "apps": [
+    {
+      "id": "spotify",
+      "url": "https://open.spotify.com"
+    }
+  ]
+}
